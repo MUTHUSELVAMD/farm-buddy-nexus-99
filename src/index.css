@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smart Farmer Helper Design System - Agricultural Theme */
+
+@layer base {
+  :root {
+    /* Core Agriculture Colors */
+    --background: 40 20% 97%;
+    --foreground: 140 30% 15%;
+    
+    /* Primary - Farm Green */
+    --primary: 140 65% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 140 55% 50%;
+    --primary-dark: 140 75% 25%;
+    
+    /* Secondary - Earth Brown */
+    --secondary: 25 35% 60%;
+    --secondary-foreground: 25 35% 15%;
+    
+    /* Accent - Harvest Gold */
+    --accent: 45 85% 60%;
+    --accent-foreground: 45 85% 15%;
+    
+    /* Success - Healthy Green */
+    --success: 120 65% 45%;
+    --success-foreground: 0 0% 98%;
+    
+    /* Warning - Caution Yellow */
+    --warning: 40 95% 50%;
+    --warning-foreground: 40 95% 15%;
+    
+    /* Destructive - Disease Red */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Card and Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 140 30% 15%;
+    
+    /* Input and Interactive Elements */
+    --input: 140 20% 90%;
+    --border: 140 20% 85%;
+    --ring: 140 65% 35%;
+    
+    /* Muted Elements */
+    --muted: 40 15% 92%;
+    --muted-foreground: 140 20% 45%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 30% 15%;
+    
+    /* Design System Radius */
+    --radius: 0.75rem;
+    
+    /* Agricultural Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-earth: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
+    --gradient-field: linear-gradient(180deg, hsl(140 40% 85%), hsl(120 30% 90%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-button: 0 2px 10px -2px hsl(var(--primary) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    --background: 140 30% 8%;
+    --foreground: 40 20% 95%;
+    --card: 140 25% 10%;
+    --card-foreground: 40 20% 95%;
+    --popover: 140 25% 10%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 140 55% 50%;
+    --primary-foreground: 140 30% 8%;
+    --secondary: 25 25% 20%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 140 20% 15%;
+    --muted-foreground: 40 15% 65%;
+    --accent: 45 75% 55%;
+    --accent-foreground: 45 85% 10%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 140 20% 20%;
+    --input: 140 20% 15%;
+    --ring: 140 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+  
+  .gradient-field {
+    background: var(--gradient-field);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+}
+
+@layer components {
+  .agricultural-card {
+    @apply bg-card border border-border rounded-xl p-6 shadow-card transition-smooth hover:shadow-lg;
+  }
+  
+  .chat-bubble-user {
+    @apply bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-xs ml-auto;
+  }
+  
+  .chat-bubble-ai {
+    @apply bg-card border border-border rounded-2xl rounded-bl-md px-4 py-3 max-w-xs mr-auto;
+  }
+}
